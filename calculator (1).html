@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    button {
+      width: 300px;
+      height: 60px;
+      text-align: center;
+      border-width: 2px solid #4CAF50;
+      border-radius: 20px;
+      color:rgb(4, 14, 14); 
+    }
+
+    div{
+      text-align: center;
+    }
+    body{
+    background-size: 225vh;
+
+}
+
+  </style>
+</head>
+<body style="background-image:url(image1.jpg);" >
+  <span id="enter"><FONT COLOR="WHITE">Enter your first number :</FONT> </span> <br>
+  <input type="number" id="firstnumber">
+  <br> <br />
+  <span id="enter"><FONT COLOR="WHITE">Enter your second number : </FONT></span> <br>
+  <input type="number" id="secondnumber"> <br> <br />
+  <p>
+    <FONT COLOR="WHITE">Result : <span id="result"> </FONT></span>
+  </p>
+  <div>
+  <button id="add" onclick="add()">Add</button>
+  <br> <br>
+  <button id="sub" onclick="subtract()">Subtract</button>
+  <br><br>
+  <button id="mul" onclick="multiply()">Multiply</button>
+  <br><br>
+  <button id="div" onclick="divide()">Divide</button>
+  <br><br>
+  <button id="checkdiv" onclick="canDivide()">Can it divide</button>
+  <br><br>
+  <button id="rem" onclick="remainder()">Remainder</button>
+  <br><br>
+  <button id="pow" onclick="power()">Exponent</button>
+  <br><br>
+  </div>
+  <script>
+    var num1, num2;
+ function error(){
+   document.getElementById('result').innerHTML=alert("please enter numbers !");
+ }
+
+    function getNums() {
+      num1 = parseFloat(document.getElementById('firstnumber').value);
+      num2 = parseFloat(document.getElementById('secondnumber').value);
+    };
+    function add() {
+      getNums();
+        var plus = num1 + num2;
+  if (isNaN(plus)){
+    error();
+  } else{
+    document.getElementById('result').innerHTML = plus;
+    document.getElementById("add").style.backgroundColor="blue";
+  }
+    };
+
+    function subtract() {
+      getNums();
+      var minus = num1 - num2;
+ if (isNaN(minus)){
+    error();
+  } else{
+      document.getElementById('result').innerHTML = minus;
+      document.getElementById("sub").style.backgroundColor="blue";
+  }
+    };
+
+    function multiply() {
+      getNums();
+      var into = num1 * num2;
+   if (isNaN(into)){
+    error();
+  } else{
+      document.getElementById('result').innerHTML = into;
+      document.getElementById("mul").style.backgroundColor="blue";
+  }
+    };
+
+    function divide() {
+      getNums();
+      var dividedby = num1 / num2;
+  if (isNaN(dividedby)){
+    error();
+  } else{
+      document.getElementById('result').innerHTML = dividedby;
+      document.getElementById("div").style.backgroundColor="blue";
+
+  }
+    };
+
+    function canDivide() {
+      getNums();
+    if(isNaN(num1) || isNaN(num2)){
+      error()
+    }else{
+      if (num1 % num2 == 0) {
+        document.getElementById('result').innerHTML = num2 + ' can divide ' + num1;
+        document.getElementById("checkdiv").style.backgroundColor="blue";
+      } else {
+        document.getElementById('result').innerHTML = num2 + ' can\'t divide ' + num1;
+        document.getElementById("checkdiv").style.backgroundColor="blue";
+      }
+    }
+    };
+    function remainder() {
+      getNums();
+      var remaining = num1 % num2;
+  if (isNaN(remaining)){
+    error();
+  } else{
+      document.getElementById('result').innerHTML = remaining;
+      document.getElementById("rem").style.backgroundColor="blue";
+  }
+    };
+    function power() {
+      getNums();
+      var EXPONENT = num1 ** num2;
+  if (isNaN(EXPONENT)){
+    error();
+  } else{
+      document.getElementById('result').innerHTML = EXPONENT;
+      document.getElementById("pow").style.backgroundColor="blue";
+  }
+    };
+
+  </script>
+
+  <FONT COLOR="WHITE"><h2> Do you like my webpage:</h2>
+  <p>Can you do it? if you are not busy.. </p>  
+  <script>
+    function show_alert(){
+      alert("Thank You...");
+    }
+  </script>
+  <form >
+
+     <input type="radio" id="Yes" name="Review" value="Yes" onclick="show_alert()">
+     <label for="Yes">Yes</label><br>
+     <input type="radio" id="Nope" name="Review" value="Nope" onclick="show_alert()">
+     <label for="css">Nope</label><br>
+    </form>
+  <hr />
+  <footer> Designed by Padma</footer> </FONT>
+</body>
+</html>
